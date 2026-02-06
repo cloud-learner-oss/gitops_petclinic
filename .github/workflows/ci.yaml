@@ -78,8 +78,8 @@ jobs:
     # 변경사항 커밋 & 푸시
     - name: Commit and push if there are changes
       run: |
-        git config --global user.name 'cloud-learner-oss'
-        git config --global user.email '00bwjabajs@gmail.com'
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'github-actions@github.com'
         git add k8s/deployment.yaml
         git diff --quiet && git diff --staged --quiet || (git commit -m "Update image tag to ${{ github.sha }}"; git push https://${{ secrets.PAT }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref }})
         
